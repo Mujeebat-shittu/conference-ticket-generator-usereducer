@@ -71,14 +71,6 @@ function Form() {
         }
     };
 
-    // const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    //     e.preventDefault();
-    //     setDragOver(false);
-    //     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-    //         dispatch({ type: "SET_AVATAR", payload: e.dataTransfer.files[0] });
-    //     }
-    // }
-
 
         return (
             <>
@@ -91,8 +83,14 @@ function Form() {
                         <label htmlFor="file" className='my-2'>Upload Avatar                             
 
                             {state.avatar ? (
-                                <div className="text-green-600">
-                                    File selected: {state.avatar.name}</div>
+                                <div className="text-orange-400 text-lg border-[var(--neutral-700)] border-2 rounded-md border-dashed mt-2 mx-auto py-4 px-6 w-[100%]">
+                                    File selected: {state.avatar.name}
+
+                                    <div className="text-sm text-[var(--neutral-300)] flex gap-5 items-center justify-center ">
+                                        <button className="bg-[hsl(245,19%,25%)] py-1 px-4 my-1 rounded-lg cursor-pointer">Remove Image</button>
+                                        <button className="bg-[hsl(245,19%,25%)] py-1 px-4 my-1 rounded-lg cursor-pointer">Change Image</button>
+                                    </div>
+                                    </div>
                                ) : (
                                <div
                                     className='border-[var(--neutral-700)] border-2 rounded-md border-dashed mt-2 mx-auto p-4 w-[100%]'
@@ -135,7 +133,10 @@ function Form() {
 
                         /><br /><br />
 
-                        <button type='submit' className='font-bold text-[16px]'>Generate My Ticket</button>
+                        <button type='submit' 
+                        className='cursor-pointer font-bold text-[16px] w-[100%] bg-[var(--orange-700)] text-[var(--neutral-900)] border-none border-[5px] p-4'
+                        > 
+                        Generate My Ticket</button>
 
                     </form>
                 </section>

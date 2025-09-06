@@ -90,11 +90,4 @@ input {
   background-color: hsl(245, 19%, 25%);
 }
 
-button {
-  width: 100%;
-  background-color: var(--orange-700);
-  color: var(--neutral-900);
-  border: none;
-  border-radius: 5px;
-  padding: 1rem;
-}
+
