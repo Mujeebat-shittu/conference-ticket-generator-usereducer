@@ -1,6 +1,6 @@
 import '../index.css';
 import Logo from '../assets/logo-full.svg'
-import { useState, useReducer } from 'react';
+import {  useReducer } from 'react';
 import { useNavigate } from 'react-router';
 import Upload from "../assets/icon-upload.svg"
 
@@ -62,7 +62,7 @@ function Form() {
 
         )
     }
-    const [dragOver, setDragOver] = useState(false);
+    // const [dragOver, setDragOver] = useState(false);
 
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,48 +71,37 @@ function Form() {
         }
     };
 
-    const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-        e.preventDefault();
-        setDragOver(false);
-        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-            dispatch({ type: "SET_AVATAR", payload: e.dataTransfer.files[0] });
-        }
-    }
+    // const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    //     e.preventDefault();
+    //     setDragOver(false);
+    //     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+    //         dispatch({ type: "SET_AVATAR", payload: e.dataTransfer.files[0] });
+    //     }
+    // }
 
 
         return (
             <>
-                <section className="flex items-center justify-center flex-col h-screen mx-8 my-10 p-4 text-white">
+                <section className="flex items-center justify-center flex-col h-screen mx-8 my-10 l p-4 text-white">
 
-                    <img src={Logo} alt="Logo" />
+                    <img src={Logo} alt="Logo" className='mt-8' />
                     <h1 className="text-4xl font-semibold text-center py-2">Your Journey to Coding Conf 2025 Starts Here!</h1>
                     <p className='text-lg'>Secure your spot at next year's biggest coding conference</p>
                     <form onSubmit={handleSubmit} className='my-10'>
-                        <label htmlFor="file" className='my-2'>Upload Avatar </label>
-
-                            <div
-                                className={`border-2 rounded-md mt-2 p-6 w-full text-center transition ${dragOver ? "border-orange-500 bg-orange-50" : "border-dashed border-gray-400"
-                                    }`}
-                                onDragOver={(e) => {
-                                    e.preventDefault();
-                                    setDragOver(true);
-                                }}
-                                onDragLeave={() => setDragOver(false)}
-                                onDrop={handleDrop}
-                            >
+                        <label htmlFor="file" className='my-2'>Upload Avatar                             
 
                             {state.avatar ? (
                                 <div className="text-green-600">
                                     File selected: {state.avatar.name}</div>
                                ) : (
                                <div
-                                    className='border-[var(--neutral-700)] mt-2 mx-auto p-4 w-[100%]'
+                                    className='border-[var(--neutral-700)] border-2 rounded-md border-dashed mt-2 mx-auto p-4 w-[100%]'
                                 >
                                     <img src={Upload} alt="" className='mx-auto' />
                                     <p className="">Drag and drop or click to upload</p>
                                 </div>
                             )}
-                            </div>
+                            </label>
                         
                         <input id="file" type="file" required 
                             onChange={handleFileChange}
