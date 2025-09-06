@@ -82,7 +82,7 @@ function Form() {
 
         return (
             <>
-                <section className="flex items-center justify-center flex-col h-screen mx-8 my-auto p-4 text-white">
+                <section className="flex items-center justify-center flex-col h-screen mx-8 my-10 p-4 text-white">
 
                     <img src={Logo} alt="Logo" />
                     <h1 className="text-4xl font-semibold text-center py-2">Your Journey to Coding Conf 2025 Starts Here!</h1>
