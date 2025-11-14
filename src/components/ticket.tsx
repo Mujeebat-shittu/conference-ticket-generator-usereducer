@@ -2,16 +2,38 @@ import { useLocation } from "react-router";
 import Bg from "../assets/pattern-ticket.svg"
 import Logo from "../assets/logo-full.svg"
 import Icon from "../assets/icon-github.svg"
+import html2canvas from "html2canvas";
+import { useRef } from "react";
 
 function Ticket() {
     const location = useLocation();
     const { avatar, fullname, email, username } = location.state || {}
 
-    console.log("Bg URL:", Bg);
+    const ticketRef = useRef<HTMLDivElement>(null);
+
+    const handleDownload = async () => {
+        if (!ticketRef.current) return;
+
+        // Capture the element
+        const canvas = await html2canvas(ticketRef.current, {
+            scale: 0.8,
+            backgroundColor: "#0c082b", // ticket background color
+
+        });
+
+        // Convert to image
+        const image = canvas.toDataURL("image/png");
+
+        // Download automatically
+        const link = document.createElement("a");
+        link.href = image;
+        link.download = "ticket.png";
+        link.click();
+    };
 
 
     return (
-        
+
         <div className="flex flex-col items-center justify-center gap-10 text-[var(--neutral-300)] text-center my-10 mx-auto">
             <img src={Logo} alt="" className="" />
             <div className="flex flex-col gap-4 items-center justify-center w-[70%]">
@@ -31,31 +53,35 @@ function Ticket() {
                 />
                 <div className="relative z-10 right-5 flex flex-col items-start gap-5">
                     <div className="">
-                       <img src={Logo} alt="Logo" className="w-[150px] mb-1 flex items-start" />
-                    <p className="ml-6"> Jan 31, 2025 / Lagos, Nigeria</p> 
+                        <img src={Logo} alt="Logo" className="w-[150px] mb-1 flex items-start" />
+                        <p className="ml-6"> Jan 31, 2025 / Lagos, Nigeria</p>
                     </div>
 
                     {/* Avatar and username details */}
-                    
+
                     <div className="flex gap-5">
-                        {avatar && <img src={avatar} alt={username} />}
+                        {avatar && <img src={avatar} alt={username} className="h-20 w-20" />}
 
-                    <div className="flex flex-col items-start justify-center">
-                    <p>{fullname} </p>
-                    <div className="flex">
-                        <img src={Icon} alt="" />
-                    <p className="">{username}</p>
+                        <div className="flex flex-col items-start justify-center">
+                            <p>{fullname} </p>
+                            <div className="flex">
+                                <img src={Icon} alt="" />
+                                <p className="">{username}</p>
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    </div>
-
-                    </div>
-                    
                 </div>
                 <div className="relative left-10 rotate-90 text-lg">
                     <p className="text-[var(--neutral-300)]">#01609</p>
                 </div>
             </div>
+
+            <button onClick={handleDownload} className="mt-4 bg-(--orange-700) text-white p-2 rounded cursor-pointer">
+                Download Ticket
+            </button>
 
         </div>
     )

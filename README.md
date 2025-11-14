@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
+## 🎟 Ticket Generator Webpage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript web application that allows users to upload an avatar, enter their personal details, and generate a personalized event ticket. Users can download their ticket as a PNG image with custom styling, including background color, text color, and rounded corners, without exposing sensitive data in the URL.
 
-Currently, two official plugins are available:
+## 📝 Short Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project demonstrates:
 
-## Expanding the ESLint configuration
+- *UseReducer* for form handling and validation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- File uploads (avatar) with validation for type and size
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React Router for navigation between form and ticket display
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- html2canvas to capture and download the ticket as an image
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## ⚡ Features
+
+- Upload an avatar image (JPG, PNG, WEBP, max 2MB)
+
+- Fill in personal information (Full name, Email, GitHub username)
+
+- Form validation with error messages using React Hook Form
+
+- Generate a custom event ticket with avatar, name, username, and event details
+
+- Download the ticket as a PNG image with correct styling
+
+- Data security: form data does not appear in the URL
+
+- Responsive design with Tailwind CSS
+
+## 🛠 Technology Stack
+
+- React
+
+- TypeScript
+
+- UseReducer
+
+- React Router v6
+
+- Tailwind CSS
+
+- html2canvas
+
+
+
+## 🖼 Usage
+
+- Fill in the form fields (Full Name, Email, GitHub username)
+
+- Upload an avatar image
+
+- Click Generate My Ticket
+
+- Review the ticket on the next page
+
+- Click Download Ticket to save it as PNG
+
+## ⚠️ Notes
+
+- Ticket image is generated using html2canvas — ensure images are fully loaded before downloading
+
+- Avatar is stored temporarily as an object URL; memory is released when the ticket is downloaded
+
+
+## 📜 License
+
+This project is open source and free to use.
