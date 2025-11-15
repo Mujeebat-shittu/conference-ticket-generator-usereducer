@@ -59,14 +59,14 @@ function Ticket() {
                 />
                 <div className="relative z-10 right-5 flex flex-col items-start gap-5">
                     <div className="">
-                        <img src={Logo} alt="Logo" className="w-[120px] sm:w-[150px] mb-1 flex items-start" />
+                        <img src={Logo} alt="Logo" className="w-[120px] sm:w-[150px] my-1 ml-1 flex items-start" />
                         <p className="ml-6"> Jan 31, 2025 / Lagos, Nigeria</p>
                     </div>
 
                     {/* Avatar and username details */}
 
                     <div className="flex gap-5">
-                        {avatar && <img src={avatar} alt={username} className="h-15 w-15 sm:h-20 sm:w-20" />}
+                        {avatar && <img src={avatar} alt={username} className="h-15 w-15 sm:h-20 sm:w-20 ml-2" />}
 
                         <div className="flex flex-col items-start justify-center">
                             <p>{fullname} </p>
