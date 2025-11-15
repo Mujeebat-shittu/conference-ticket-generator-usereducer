@@ -36,7 +36,7 @@ function Ticket() {
 
         <div className="flex flex-col items-center justify-center gap-10 text-[var(--neutral-300)] text-center my-10 mx-auto">
             <img src={Logo} alt="" className="" />
-            <div className="flex flex-col gap-4 items-center justify-center w-[70%]">
+            <div className="flex flex-col gap-4 items-center justify-center sm:w-[70%]">
                 <h1 className="text-4xl">
                     Congrats, <span className="font-bold bg-gradient-to-r from-[hsl(7,86%,67%)] to-[hsl(0,0%,100%)] bg-clip-text text-transparent">{fullname}!</span> Your ticket is ready.
                 </h1>
@@ -45,7 +45,7 @@ function Ticket() {
             </div>
 
 
-            <div className="relative w-[80%] h-[200px] flex items-center justify-center mx-auto">
+            <div className="relative w-[90%] h-[300px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto">
                 <img
                     src={Bg}
                     alt="ticket background"
