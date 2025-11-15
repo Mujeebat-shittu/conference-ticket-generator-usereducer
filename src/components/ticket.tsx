@@ -46,12 +46,12 @@ function Ticket() {
                         Your ticket is ready.
                     </p>
 
-                <p className="text-lg line-clamp-3 md:line-clamp-2">We've emailed your ticket to <span className="text-[var(--orange-500)]">{email}</span> and will send updates
+                <p className="text-lg line-clamp-3 md:line-clamp-2 w-[70%]">We've emailed your ticket to <span className="text-[var(--orange-500)]">{email}</span> and will send updates
                     in the run up to the event</p>
             </div>
 
 
-            <div className="relative w-full h-[350px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto p-4">
+            <div ref={ticketRef} className="relative w-full h-[350px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto p-4">
                 <img
                     src={Bg}
                     alt="ticket background"
@@ -87,11 +87,12 @@ function Ticket() {
 
             <div className="">
                 <p className="">You can also download your ticket using the below</p>
-            </div>
+            
 
             <button onClick={handleDownload} className="sm:mt-4 bg-(--orange-700) text-white p-2 rounded cursor-pointer w-[150px]">
                 Download Ticket
             </button>
+            </div>
 
         </div>
     )
