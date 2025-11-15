@@ -34,18 +34,24 @@ function Ticket() {
 
     return (
 
-        <div className="flex flex-col items-center justify-center gap-10 text-[var(--neutral-300)] text-center my-10 mx-auto">
+        <div className="flex flex-col items-center justify-center gap-5 sm:gap-10 text-[var(--neutral-300)] text-center my-10 mx-auto">
             <img src={Logo} alt="" className="" />
             <div className="flex flex-col gap-4 items-center justify-center w-[80%] sm:w-[70%]">
-                <h1 className="text-4xl">
-                    Congrats, <span className="font-bold bg-gradient-to-r from-[hsl(7,86%,67%)] to-[hsl(0,0%,100%)] bg-clip-text text-transparent">{fullname}!</span> Your ticket is ready.
-                </h1>
-                <p className="text-xl">We've emailed your ticket to <span className="text-[var(--orange-500)]">{email}</span> and will send updates
+                
+                    <p className="text-3xl font-bold line-clamp-1">
+                        Congrats,
+                    </p>
+                    <p className="font-bold text-3xl line-clamp-1 bg-gradient-to-r from-[hsl(7,86%,67%)] to-[hsl(0,0%,100%)] bg-clip-text text-transparent">{fullname}!</p>
+                    <p className="text-2xl line-clamp-1">
+                        Your ticket is ready.
+                    </p>
+
+                <p className="text-lg line-clamp-3 md:line-clamp-2">We've emailed your ticket to <span className="text-[var(--orange-500)]">{email}</span> and will send updates
                     in the run up to the event</p>
             </div>
 
 
-            <div className="relative w-[90%] h-[350px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto">
+            <div className="relative w-full h-[350px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto p-4">
                 <img
                     src={Bg}
                     alt="ticket background"
@@ -79,7 +85,11 @@ function Ticket() {
                 </div>
             </div>
 
-            <button onClick={handleDownload} className="mt-4 bg-(--orange-700) text-white p-2 rounded cursor-pointer">
+            <div className="">
+                <p className="">You can also download your ticket using the below</p>
+            </div>
+
+            <button onClick={handleDownload} className="sm:mt-4 bg-(--orange-700) text-white p-2 rounded cursor-pointer w-[150px]">
                 Download Ticket
             </button>
 
