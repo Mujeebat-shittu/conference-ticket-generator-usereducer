@@ -36,7 +36,7 @@ function Ticket() {
 
         <div className="flex flex-col items-center justify-center gap-10 text-[var(--neutral-300)] text-center my-10 mx-auto">
             <img src={Logo} alt="" className="" />
-            <div className="flex flex-col gap-4 items-center justify-center sm:w-[70%]">
+            <div className="flex flex-col gap-4 items-center justify-center w-[80%] sm:w-[70%]">
                 <h1 className="text-4xl">
                     Congrats, <span className="font-bold bg-gradient-to-r from-[hsl(7,86%,67%)] to-[hsl(0,0%,100%)] bg-clip-text text-transparent">{fullname}!</span> Your ticket is ready.
                 </h1>
@@ -45,7 +45,7 @@ function Ticket() {
             </div>
 
 
-            <div className="relative w-[90%] h-[300px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto">
+            <div className="relative w-[90%] h-[350px] sm:w-[80%] sm:h-[200px] flex items-center justify-center mx-auto">
                 <img
                     src={Bg}
                     alt="ticket background"
@@ -53,14 +53,14 @@ function Ticket() {
                 />
                 <div className="relative z-10 right-5 flex flex-col items-start gap-5">
                     <div className="">
-                        <img src={Logo} alt="Logo" className="w-[150px] mb-1 flex items-start" />
+                        <img src={Logo} alt="Logo" className="w-[120px] sm:w-[150px] mb-1 flex items-start" />
                         <p className="ml-6"> Jan 31, 2025 / Lagos, Nigeria</p>
                     </div>
 
                     {/* Avatar and username details */}
 
                     <div className="flex gap-5">
-                        {avatar && <img src={avatar} alt={username} className="h-20 w-20" />}
+                        {avatar && <img src={avatar} alt={username} className="h-15 w-15 sm:h-20 sm:w-20" />}
 
                         <div className="flex flex-col items-start justify-center">
                             <p>{fullname} </p>
@@ -74,7 +74,7 @@ function Ticket() {
                     </div>
 
                 </div>
-                <div className="relative left-10 rotate-90 text-lg">
+                <div className="relative left-0 sm:left-10 rotate-90 text-lg">
                     <p className="text-[var(--neutral-300)]">#01609</p>
                 </div>
             </div>
