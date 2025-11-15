@@ -5,8 +5,8 @@ A responsive React + TypeScript application that allows users to register for a 
 ---
 
 ## 🚀 Live Demo  
-👉 **[View Live Project](#)**  
-👉 **[GitHub Repository](#)**  
+👉 **[View Live Project](https://ticket-generator-usereducer.netlify.app/)**  
+👉 **[GitHub Repository](https://github.com/Mujeebat-shittu/conference-ticket-generator-usereducer)**  
 
 ---
 
