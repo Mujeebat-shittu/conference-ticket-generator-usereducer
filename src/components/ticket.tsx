@@ -86,7 +86,7 @@ function Ticket() {
             </div>
 
             <div className="">
-                <p className="">You can also download your ticket using the below</p>
+                <p className="">You can also download your ticket using the button below</p>
             
 
             <button onClick={handleDownload} className="sm:mt-4 bg-(--orange-700) text-white p-2 rounded cursor-pointer w-[150px]">
